@@ -16,6 +16,19 @@
 
 1. 找到位于`成都`市的支行的名字。
 2. 找到在`杨柳`支行有贷款（`loan`）的借款人（`borrower`）的ID。
+答：
+SELECT branch_name
+FROM branch
+WHERE branch_city = '成都';
 
+SELECT borrower.ID
+FROM loan, borrower
+WHERE loan.loan_number = borrower.loan_number
+AND loan.branch_name = '杨柳';
 ## 题目二（3分）
 假设数据库中存储用户名和密码的关系模式是 users(name, pswd, gender)，请结合关系代数简述实现`用户登录`逻辑的思路。
+答：
+-- 假设用户输入的用户名是 '张三'，密码是 '123'
+SELECT name, gender
+FROM users
+WHERE name = '张三' AND pswd = '123';
