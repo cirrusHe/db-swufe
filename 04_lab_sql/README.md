@@ -1,4 +1,4 @@
-本周通过Postgresql软件实践基本的SQL，并学习了集合操作等知识。
+![image](https://github.com/user-attachments/assets/528bc7dd-8431-4744-8ee4-fc43b832e0a7)本周通过Postgresql软件实践基本的SQL，并学习了集合操作等知识。
 
 # 本周作业（第3次作业）
 
@@ -16,7 +16,18 @@
 ### PostgreSQL
 
 参考[Pattern Matching](https://www.postgresql.org/docs/17/functions-matching.html)，在PG中使用至少三种方法实现找到所有以`S`开头教师的名字。
+答：
+SELECT teacher_name
+FROM teachers
+WHERE teacher_name LIKE 'S%';
 
+SELECT teacher_name
+FROM teachers
+WHERE teacher_name SIMILAR TO '^S.*';
+
+SELECT teacher_name
+FROM teachers
+WHERE teacher_name ~ '^S';
 ### MySQL
 
 参考[Pattern Matching](https://dev.mysql.com/doc/refman/8.4/en/pattern-matching.html)和[String Functions and Operators](https://dev.mysql.com/doc/refman/8.4/en/string-functions.html) ，在MySQL中使用至少三种方法实现找到所有以`S`开头教师的名字。
